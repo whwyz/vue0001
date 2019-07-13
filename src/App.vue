@@ -1,12 +1,13 @@
 <template>
   <div id="app">
     <header>vue项目</header>
+    <router-view></router-view>
     <footer>
       <ul>
-        <li><router-link to="/">首页</router-link></li>
-        <li><router-link to="/">首页</router-link></li>
-        <li><router-link to="/">首页</router-link></li>
-        <li><router-link to="/">首页</router-link></li>
+        <li><router-link to="/home">首页</router-link></li>
+        <li><router-link to="/member">会员</router-link></li>
+        <li><router-link to="/shopcar">购物车</router-link></li>
+        <li><router-link to="/search">搜索</router-link></li>
       </ul>
     </footer>
   </div>

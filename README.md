@@ -19,4 +19,9 @@ npm run build --report
 ```
 
 ### 项目说明
+## 制作页面 App组件
+ 
+1.header，footer区域
 
+2.要在中间放置一个 router-view 
+ 
