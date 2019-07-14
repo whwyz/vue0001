@@ -1,10 +1,16 @@
 <template>
   <div id="app">
     <header>vue项目</header>
-    <router-view></router-view>
+    <div class="con">
+      <transition>
+        <router-view></router-view>
+      </transition>
+    </div>
+
+
     <footer>
       <ul>
-        <li><router-link to="/home">首页</router-link></li>
+        <li><router-link to="/home" class="on">首页</router-link></li>
         <li><router-link to="/member">会员</router-link></li>
         <li><router-link to="/shopcar">购物车</router-link></li>
         <li><router-link to="/search">搜索</router-link></li>
@@ -15,7 +21,15 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data(){
+    return{
+
+    }
+  },
+  methods:{
+
+  }
 }
 </script>
 
@@ -23,7 +37,7 @@ export default {
   /* lang 表示可使用什么样式
     scoped 表示当前组件中才能使用这里的样式
   */
-  div,ul,li,a{
+  div,ul,li,a,span{
     margin: 0;
     padding: 0;
   }
@@ -33,13 +47,19 @@ export default {
   a{
     text-decoration: none;
   }
-
+  .myactive{
+    color: cadetblue;
+  }
+  .con{
+    height:calc(100vh - 0.85rem) ;
+    overflow-x:hidden ;
+  }
 
   header{
     width: 100%;
     text-align: center;
     line-height: 0.4rem;
-    background-color: skyblue;
+    background-color: #ff8932;
   }
 
   footer{
@@ -57,5 +77,21 @@ export default {
         text-align: center;
       }
     }
+  }
+
+
+  .v-enter{
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  .v-leave-to{
+    opacity: 0;
+    transform: translateX(-100%);
+    position: absolute;
+  }
+  .v-enter-active,
+  .v-leave-active{
+
+    transition: 0.3s ;
   }
 </style>
